@@ -9,6 +9,8 @@
 #include <robin/graph_core.hpp>
 #include <robin/graph_solvers.hpp>
 
+using namespace std;
+
 namespace robin {
 
 //
@@ -138,8 +140,8 @@ std::vector<size_t> MaxCliqueSolver::FindMaxClique(const IGraph& graph) const {
     // 2. neigh-core pruning/ordering
     // 3. dynamic coloring bounds/sort
     // see the original PMC paper and implementation for details:
-    // R. A. Rossi, D. F. Gleich, and A. H. Gebremedhin, “Parallel Maximum Clique Algorithms with
-    // Applications to Network Analysis,” SIAM J. Sci. Comput., vol. 37, no. 5, pp. C589–C616, Jan.
+    // R. A. Rossi, D. F. Gleich, and A. H. Gebremedhin, "Parallel Maximum Clique Algorithms with
+    // Applications to Network Analysis," SIAM J. Sci. Comput., vol. 37, no. 5, pp. C589–C616, Jan.
     // 2015.
     if (G.num_vertices() < in.adj_limit) {
       G.create_adj();
